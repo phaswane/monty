@@ -1,14 +1,14 @@
-#ifndef _MONTY_H_
-#define _MONTY_H_
+#ifndef MONTY_H
+#define MONTY_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -61,38 +61,34 @@ typedef struct global_s
 }  global_t;
 
 extern global_t global;
-
-/* line_mod */
 char add_null(char *line);
 int line_len(char *line);
 
-/* free_stack */
 void free_stack(stack_t **stack);
 
-/*execute_op*/
 void (*funct(char *token))(stack_t **stack, unsigned int line_number);
 
-/*tasks*/
-void s_push(stack_t **stack, unsigned int line_number);
-void s_pall(stack_t **stack, unsigned int line_number);
-void s_pint(stack_t **stack, unsigned int line_number);
-void s_pop(stack_t **stack, unsigned int line_number);
-void s_swap(stack_t **stack, unsigned int line_number);
-void s_add(stack_t **stack, unsigned int line_number);
-void s_nop(stack_t **stack, unsigned int line_number);
-void s_sub(stack_t **stack, unsigned int line_number);
-void s_error(stack_t **stack, unsigned int line_number);
-void s_div(stack_t **stack, unsigned int line_number);
-void s_mul(stack_t **stack, unsigned int line_number);
-void s_mod(stack_t **stack, unsigned int line_number);
-void s_pchar(stack_t **stack, unsigned int line_number);
-void s_pstr(stack_t **stack, unsigned int line_number);
-void s_rotl(stack_t **stack, unsigned int line_number);
-void s_rotr(stack_t **stack, unsigned int line_number);
-void s_queue(stack_t **stack, unsigned int line_number);
-void s_stack(stack_t **stack, unsigned int line_number);
-/*verify*/
+void multiplyTopTwoElements(stack_t **stack, unsigned int line_number);
+void calculateModulus(stack_t **stack, unsigned int line_number);
+void printCharFromTop(stack_t **stack, unsigned int line_number);
+void printStringFromTop(stack_t **stack, unsigned int line_number);
+void rotateLeft(stack_t **stack, unsigned int line_number);
+void rotateRight(stack_t **stack, unsigned int line_number);
+void enqueueElement(stack_t **stack, unsigned int line_number);
+void switchToStackMode(stack_t **stack, unsigned int line_number);
+void pushElement(stack_t **stack, unsigned int line_number);
+void printAllElements(stack_t **stack, unsigned int line_number);
+void printIntegerFromTop(stack_t **stack, unsigned int line_number);
+void popElement(stack_t **stack, unsigned int line_number);
+void swapTopTwoElements(stack_t **stack, unsigned int line_number);
+void addTopTwoElements(stack_t **stack, unsigned int line_number);
+void noOperation(stack_t **stack, unsigned int line_number);
+void subtractTopTwoElements(stack_t **stack, unsigned int line_number);
+void handleErrors(stack_t **stack, unsigned int line_number);
+void divideTopTwoElements(stack_t **stack, unsigned int line_number);
 void _verify(stack_t **stack, unsigned int line_number);
+
 int check_int(char *num);
 
-#endif /*monty.h*/
+#endif 
+
